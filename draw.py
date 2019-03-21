@@ -73,9 +73,9 @@ def generate_torus( points, cx, cy, cz, r0, r1, step ):
         for j in range(step + 1):
             theta = (math.pi * 2) / (step) * j
             # print(theta)
-            x = r0 * math.cos(theta) * math.cos(phi) + r1 * math.cos(phi)
-            y = r0 * math.sin(theta)
-            z = -r0 * math.cos(theta) * math.sin(phi) - r1 * math.sin(phi)
+            x = r0 * math.cos(theta) * math.cos(phi) + r1 * math.cos(phi) + cx
+            y = r0 * math.sin(theta) + cy
+            z = -r0 * math.cos(theta) * math.sin(phi) - r1 * math.sin(phi) + cz
             add_edge( points, x, y-1, z, x, y+1, z )
             # print(x)
 
